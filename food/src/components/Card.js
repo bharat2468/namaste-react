@@ -1,13 +1,12 @@
 
-
 const Card = (props) => {
     const {product} = props
-    let {title,description,price,rating,images} = product;
-    images = images[0];
+    let {title,description,price,rating,image} = product;
+    description = description.substring(0,30);
 
     return (
         <div className="card bg-base-100 shadow-xl basis-[25%]">
-            <figure><img src={images} alt="Shoes" /></figure>
+            <figure><img className=" h-80" src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                 {title}
@@ -16,7 +15,7 @@ const Card = (props) => {
                 <p>{description}</p>
                 <p>{price}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">{rating}</div>
+                    <div className="badge badge-outline">{rating.rate}</div>
                 </div>
             </div>
         </div>
