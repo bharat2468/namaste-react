@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
-import {Header,Footer,Body,About,Contact,Error} from "./index";
+import {Header,Footer,Body,About,Contact,Error,Food} from "./index";
+
 
 
 const root = ReactDOM.createRoot(document.querySelector('.root'));
@@ -33,7 +34,12 @@ const appRouter = createBrowserRouter([
             {
                 path:"/contact_us",
                 element:<Contact/>
-            }
+            },
+            {
+                path:"/products/:id",
+                element:<Food/>
+            },
+
         ],
         errorElement:<Error/>,
     }

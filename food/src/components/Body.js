@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Card from "./card";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
@@ -131,7 +132,7 @@ const Body = () => {
                 </div>
 
                 {/* /*restraunt div */}
-                <div className="card_container flex justify-start flex-wrap gap-10 w-full">
+                <div className="card_container flex justify-center flex-wrap gap-10 w-full">
                     {showSearchError == 1 ? (
                         <div role="alert" className="alert alert-error">
                             <svg
@@ -151,7 +152,7 @@ const Body = () => {
                         </div>
                     ) : (
                         listOfProducts.map((product) => (
-                            <Card key={product.id} data={product} />
+                            <Link className="basis-1/4" to={"/products/" + product.id}><Card key={product.id} data={product} /></Link>
                         ))
                     )}
                 </div>
