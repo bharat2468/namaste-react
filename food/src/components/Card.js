@@ -1,7 +1,7 @@
 
 const Card = (props) => {
-    const {product} = props
-    let {title,description,price,rating,image} = product;
+    const {data} = props
+    let {title,description,price,rating,image} = data;
     description = description.substring(0,30);
 
     return (
