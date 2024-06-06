@@ -1,6 +1,23 @@
-const About = () => {
-    return (
-        <div className="flex justify-center items-center min-h-screen">
+import AboutInfoFun from "./AboutInfoFun";
+import AboutInfoClass from "./AboutInfoClass";
+import React from "react";
+
+class About extends React.Component{
+    constructor(props){
+        super(props);
+        console.log("parent constructor")
+    }
+
+    componentDidMount(){
+        console.log("parent comp did mount")
+    }
+
+    render(){
+        console.log("parent render");
+        
+        return(
+
+            <div className="flex flex-col justify-center items-center min-h-screen">
             <div className="stats stats-vertical shadow">
             <div className="stat">
                 <div className="stat-title">Downloads</div>
@@ -20,9 +37,14 @@ const About = () => {
                 <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
         </div>
+        <AboutInfoClass name={"hello"}/>
+
         </div>
         
-    );
-};
+
+        )
+    }
+}
+
 
 export default About;

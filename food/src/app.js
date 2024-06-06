@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
-import {Header,Footer,Body,About,Contact,Error,Food} from "./index";
+import {Header,Footer,Body,About,Contact,Error,ProductInfo} from "./index";
+
 
 
 
@@ -37,7 +38,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path:"/products/:id",
-                element:<Food/>
+                element:<ProductInfo/>
             },
 
         ],

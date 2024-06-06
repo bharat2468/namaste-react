@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 
-const Food = () => {
+const ProductInfo = () => {
     const [productData, setProductData] = useState(null);
     const { id } = useParams();
 
@@ -42,4 +42,4 @@ const Food = () => {
     );
 };
 
-export default Food;
+export default ProductInfo;
