@@ -1,3 +1,5 @@
+// !fetches data of the body component that is the list of products
+
 import { useState, useEffect } from "react";
 
 const useFetchData = () => {

@@ -3,7 +3,6 @@ import { useRouteError } from "react-router-dom";
 const Error = () => {
     const err = useRouteError();
     const { error, status, statusText } = err;
-    const { message } = error;
     console.log(err);
 
     return (
@@ -22,7 +21,7 @@ const Error = () => {
                     d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
             </svg>
-            <span>{message}<br></br> {status}:{statusText}</span>
+            <span>{error?.message}<br></br> {status}:{statusText}</span>
         </div>
         </div>
         
