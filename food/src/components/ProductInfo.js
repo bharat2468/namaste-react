@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useProductData from "../utils/useProductData";
 
 const ProductInfo = () => {
-    const [productData, setProductData] = useState(null);
     const { id } = useParams();
 
-    async function fetch_data() {
-        const API_LINK = "https://fakestoreapi.com/products/" + id;
-        const data = await fetch(API_LINK);
-        const json_data = await data.json();
-        setProductData(json_data);
-    }
-
-    useEffect(() => {
-        fetch_data();
-    }, []);
+    let productData = useProductData(id);
 
     if (productData === null) return <Shimmer />;
 
