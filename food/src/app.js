@@ -1,10 +1,12 @@
-import React from "react";
+import React, { lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import {Header,Footer,Body,About,Contact,Error,ProductInfo} from "./index";
+import Shimmer from "./components/Shimmer";
 
 
-
+// !dynamic bundling for grocery component
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const root = ReactDOM.createRoot(document.querySelector('.root'));
 
@@ -40,6 +42,14 @@ const appRouter = createBrowserRouter([
                 path:"/products/:id",
                 element:<ProductInfo/>
             },
+            {
+                path:"/grocery",
+                element:
+                <Suspense fallback={<Shimmer/>}>
+                    <Grocery/>
+                </Suspense>
+                
+            }
 
         ],
         errorElement:<Error/>,

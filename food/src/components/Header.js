@@ -11,6 +11,10 @@ const Header = () => {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
+                    {/* dynamic bundling for the grocery page */}
+                    <li>
+                        <Link to="/grocery">Grocery</Link>
+                    </li>
                     <li>
                         <Link to="/about">About</Link>
                     </li>
