@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Card from "./Card";
+import Card, { WithPromoted } from "./Card";
 import Shimmer from "./Shimmer";
 import SearchBar from "./SearchBar";
 import FilterButtons from "./FilterButtons";
@@ -14,6 +14,8 @@ const Body = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [showSearchError, setShowSearchError] = useState(false);
     const status = useOnlineStatus();
+
+    const PromotedCard = WithPromoted(Card);
 
     useEffect(() => {
         setFilteredProducts(listOfProducts);
@@ -72,11 +74,17 @@ const Body = () => {
                                 className="basis-1/4"
                                 to={`/products/${product.id}`}
                             >
-                                <Card key={product.id} data={product} />
+                                {product.id % 4 == 0 ? 
+                                    <PromotedCard key={product.id} data={product} />
+                                 : 
+                                    <Card key={product.id} data={product} />
+                                }
                             </Link>
                         ))
                     )
-                ) : (<OfflineError/>)}
+                ) : (
+                    <OfflineError />
+                )}
             </div>
         </div>
     );
