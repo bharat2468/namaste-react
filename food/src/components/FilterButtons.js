@@ -1,7 +1,7 @@
 const FilterButtons = ({ listOfProducts, onFilter }) => {
     const handleFilter = () => {
         const filteredProducts = listOfProducts.filter(
-            (product) => product.rating.rate > 4
+            (product) => product.info.avgRating > 4
         );
         onFilter(filteredProducts);
     };
@@ -12,11 +12,11 @@ const FilterButtons = ({ listOfProducts, onFilter }) => {
 
     return (
         <div>
-            <button className="btn" onClick={handleFilter}>
-                Show Top Rated Products
+            <button className="btn bg-secondary text-secondary-content" onClick={handleFilter}>
+                Show Top Rated Restaurants
             </button>
             <button
-                className="ml-4 btn bg-blue-700"
+                className="ml-4 btn bg-secondary text-secondary-content"
                 onClick={handleResetFilter}
             >
                 Reset Filter

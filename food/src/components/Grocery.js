@@ -23,7 +23,7 @@ const Grocery = () => {
 
     return (
         <div className="p-20 w-screen">
-            <h1 className="mb-4">Grocery List</h1>
+            <h1 className="mb-4 text-primary-content">Grocery List</h1>
             <div>
                 <input
                     type="text"
@@ -32,7 +32,7 @@ const Grocery = () => {
                     onChange={handleInputChange}
                     className="mr-4 my-4 input input-bordered w-full max-w-xs"
                 />
-                <button className=" btn btn-primary" onClick={addItem}>
+                <button className=" btn btn-secondary text-secondary-content" onClick={addItem}>
                     Add
                 </button>
             </div>

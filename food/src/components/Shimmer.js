@@ -1,7 +1,7 @@
 const Shim_card = () => {
     return (
         <>
-            <div className="card bg-slate-600  h-[500px] w-[300px] animate-pulse shadow-xl"></div>
+            <div className="card bg-base-300  h-[500px] w-[300px] animate-pulse shadow-xl"></div>
         </>
     );
 };
@@ -14,7 +14,7 @@ const Shimmer = () => {
     
     return (
         <div className="m-20">
-                <div className="card mb-10 bg-slate-600 h-[50px] w-[200px] animate-pulse shadow-xl"></div>
+                <div className="card mb-10 bg-base-300 h-[50px] w-[200px] animate-pulse shadow-xl"></div>
 
                 <div className="flex flex-wrap gap-10">
                     {cardsArray.map((index) => {

@@ -1,17 +1,24 @@
+import { CDN_LINK } from "../utils/constants";
+
+
 const Card = (props) => {
+
     const { data } = props;
-    let { title, price, rating, image } = data;
+    let { id,name,cloudinaryImageId,locality,costForTwo,avgRating} = data;
+
+    const image = CDN_LINK + cloudinaryImageId;
 
     return (
-        <div className="card bg-base-100 shadow-[2px_2px_5px_4px_#343D4F] basis-[25%] h-[500px]">
+        <div className="card bg-base-100 shadow-accent shadow-md  basis-[25%] h-[500px] text-primary-content">
             <figure>
-                <img className="h-[200px]" src={image} alt="Shoes" />
+                <img className="aspect-[4/3] object-fit object-center" src={image} alt="Shoes" />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p>{price}</p>
+                <h2 className="card-title">{name}</h2>
+                <h2 className="my-4">{locality}</h2>
+                <p>{costForTwo}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">{rating.rate}</div>
+                    <div className="badge badge-outline">{avgRating}</div>
                 </div>
             </div>
         </div>

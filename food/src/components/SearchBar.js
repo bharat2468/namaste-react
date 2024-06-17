@@ -12,7 +12,7 @@ const SearchBar = ({ listOfProducts, onSearch }) => {
         }
 
         const searchedProducts = listOfProducts.filter((product) =>
-            product.title.toLowerCase().includes(searchText.toLowerCase())
+            product.info.name.toLowerCase().includes(searchText.toLowerCase())
         );
         onSearch(searchedProducts);
     };
@@ -37,7 +37,7 @@ const SearchBar = ({ listOfProducts, onSearch }) => {
             <input
                 type="text"
                 placeholder="Type here"
-                className="ml-8 input input-bordered w-full max-w-xs"
+                className="ml-8 text-primary-content input input-bordered w-full max-w-xs"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={(e) => {
@@ -53,12 +53,12 @@ const SearchBar = ({ listOfProducts, onSearch }) => {
                 ></div>
             )}
             <button
-                className="ml-4 btn bg-blue-700"
+                className="ml-4 btn bg-secondary text-secondary-content"
                 onClick={handleClearSearch}
             >
                 X
             </button>
-            <button className="ml-4 btn bg-blue-700" onClick={handleSearch}>
+            <button className="ml-4 btn bg-secondary text-secondary-content" onClick={handleSearch}>
                 Search
             </button>
         </div>

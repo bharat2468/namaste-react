@@ -1,7 +1,7 @@
 import React, { lazy,Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
-import {Header,Footer,Body,About,Contact,Error,ProductInfo} from "./index";
+import {Header,Footer,Body,About,Contact,Error,RestaurantPage} from "./index";
 import Shimmer from "./components/Shimmer";
 
 
@@ -40,7 +40,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path:"/products/:id",
-                element:<ProductInfo/>
+                element:<RestaurantPage/>
             },
             {
                 path:"/grocery",

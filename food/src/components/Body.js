@@ -72,12 +72,12 @@ const Body = () => {
                         filteredProducts.map((product) => (
                             <Link
                                 className="basis-1/4"
-                                to={`/products/${product.id}`}
+                                to={`/products/${product.info.id}`}
                             >
                                 {product.id % 4 == 0 ? 
-                                    <PromotedCard key={product.id} data={product} />
+                                    <PromotedCard key={product.info.id} data={product.info} />
                                  : 
-                                    <Card key={product.id} data={product} />
+                                    <Card key={product.info.id} data={product.info} />
                                 }
                             </Link>
                         ))
