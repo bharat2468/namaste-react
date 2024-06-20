@@ -12,9 +12,12 @@ const ThemeToggle = () => {
     }, [theme]);
 
     const toggleTheme = () => {
+        console.log(theme);
         setTheme((prevTheme) =>
             prevTheme === "mytheme" ? "mytheme2" : "mytheme"
+            
         );
+        
     };
 
     return (
@@ -22,8 +25,8 @@ const ThemeToggle = () => {
             <input
                 onClick={toggleTheme}
                 type="checkbox"
-                value="synthwave"
-                className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
+                checked={theme === "mytheme2"}
+                className="toggle bg-base-content row-start-1 col-start-1 col-span-2"
             />
             <svg
                 className="col-start-1 row-start-1 stroke-base-100 fill-base-100"
