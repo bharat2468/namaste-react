@@ -28,8 +28,8 @@ module.exports = {
                 mytheme2: {
                     primary: "#474b4f",
                     "primary-content": "#C39898",
-                    secondary: "#503C3C",
-                    "secondary-content": "#C39898",
+                    secondary: "#8C6A5D",
+                    "secondary-content": "#E7D4B5",
                     accent: "#A87676",
                     neutral: "#DBB5B5",
                     "base-100": "#3E3232",

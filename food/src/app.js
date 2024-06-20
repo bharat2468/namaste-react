@@ -3,20 +3,24 @@ import ReactDOM from "react-dom/client";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import {Header,Footer,Body,About,Contact,Error,RestaurantPage} from "./index";
 import Shimmer from "./components/Shimmer";
+import { Provider } from "react-redux";
+import { Store } from "./redux-store/store";
+import Cart from "./components/cart/Cart";
 
 
 // !dynamic bundling for grocery component
 const Grocery = lazy(() => import("./components/Grocery"));
-
 const root = ReactDOM.createRoot(document.querySelector('.root'));
 
 const App_Comp = () => {
     return (
+        <Provider store={Store}>        
         <div className="wrapper text-red-200 w-screen min-h-screen">
             <Header/>
             <Outlet/>
             <Footer/>
         </div>
+        </Provider>
     )
 }
 
@@ -48,9 +52,11 @@ const appRouter = createBrowserRouter([
                 <Suspense fallback={<Shimmer/>}>
                     <Grocery/>
                 </Suspense>
-                
-            }
-
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
+            },
         ],
         errorElement:<Error/>,
     }
