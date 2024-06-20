@@ -22,7 +22,7 @@ const Grocery = () => {
     };
 
     return (
-        <div className="p-20 w-screen">
+        <div className="p-20 w-screen min-h-[70vh]">
             <h1 className="mb-4 text-primary-content">Grocery List</h1>
             <div>
                 <input
