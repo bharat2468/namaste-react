@@ -18,7 +18,7 @@ const ThemeToggle = () => {
     };
 
     return (
-        <label  className="cursor-pointer grid place-items-center">
+        <label  className="cursor-pointer grid place-items-center w-20">
             <input
                 onClick={toggleTheme}
                 type="checkbox"
